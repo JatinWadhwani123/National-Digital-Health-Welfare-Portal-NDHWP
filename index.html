@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>National Digital Health & Welfare Portal</title>
+  <link rel="stylesheet" href="style27.css">
+</head>
+<body>
+  <!-- Header with Navigation -->
+  <header>
+    <div class="container">
+      <h1>National Digital Health & Welfare Portal</h1>
+      <nav>
+        <ul>
+          <li><a href="#home" class="tab-link active" data-tab="home">Home</a></li>
+          <li><a href="#patient" class="tab-link" data-tab="patient">Patient</a></li>
+          <li><a href="#doctor" class="tab-link" data-tab="doctor">Doctor</a></li>
+          <li><a href="#admin" class="tab-link" data-tab="admin">Admin</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Home Section -->
+    <section id="home" class="tab-content active">
+      <h2>Welcome to NDHWP</h2>
+      <p>The National Digital Health & Welfare Portal streamlines healthcare and welfare services, allowing patients to view their medical history, receive notifications, and access important documents; doctors to update records and prescribe medications; and administrators to monitor, analyze, and manage system-wide welfare schemes and health data.</p>
+    </section>
+    
+    <!-- Patient Section -->
+    <section id="patient" class="tab-content">
+      <h2>Patient Portal</h2>
+      <div class="form-container">
+        <h3>Register / Login (OTP-based)</h3>
+        <form id="patient-login-form">
+          <label for="patient-mobile">Mobile Number:</label>
+          <input type="tel" id="patient-mobile" name="mobile" placeholder="Enter your mobile number" required>
+          <button type="button" id="send-otp">Send OTP</button>
+          
+          <div id="otp-section" class="hidden">
+            <label for="patient-otp">Enter OTP:</label>
+            <input type="text" id="patient-otp" name="otp" placeholder="Enter OTP" required>
+            <button type="submit">Verify & Login</button>
+          </div>
+        </form>
+      </div>
+      <div class="info-box">
+        <h3>Your Medical Data</h3>
+        <ul>
+          <li>View Medical History</li>
+          <li>Receive Welfare Scheme Notifications</li>
+          <li>Access Prescriptions & Lab Reports</li>
+        </ul>
+      </div>
+    </section>
+    
+    <!-- Doctor Section -->
+    <section id="doctor" class="tab-content">
+      <h2>Doctor Portal</h2>
+      <div class="form-container">
+        <h3>Doctor Login</h3>
+        <form id="doctor-login-form">
+          <label for="doctor-username">Username:</label>
+          <input type="text" id="doctor-username" name="username" placeholder="Enter your username" required>
+          <label for="doctor-password">Password:</label>
+          <input type="password" id="doctor-password" name="password" placeholder="Enter your password" required>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      <div class="info-box">
+        <h3>Doctor Functionalities</h3>
+        <ul>
+          <li>Update Patient Health Records</li>
+          <li>View Patient Medical History</li>
+          <li>Prescribe Medication</li>
+          <li>Upload Diagnosis / Lab Reports</li>
+        </ul>
+      </div>
+    </section>
+    
+    <!-- Admin Section -->
+    <section id="admin" class="tab-content">
+      <h2>Admin (Government Authority) Portal</h2>
+      <div class="form-container">
+        <h3>Admin Login</h3>
+        <form id="admin-login-form">
+          <label for="admin-username">Username:</label>
+          <input type="text" id="admin-username" name="username" placeholder="Enter admin username" required>
+          <label for="admin-password">Password:</label>
+          <input type="password" id="admin-password" name="password" placeholder="Enter password" required>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      <div class="info-box">
+        <h3>Admin Capabilities</h3>
+        <ul>
+          <li>Monitor Hospital Data</li>
+          <li>Analyze Disease Trends</li>
+          <li>Manage & Assign Welfare Schemes</li>
+          <li>Access Health Analytics Dashboard</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 National Digital Health & Welfare Portal</p>
+    </div>
+  </footer>
+  
+  <script src="js23.js"></script>
+</body>
+</html>
