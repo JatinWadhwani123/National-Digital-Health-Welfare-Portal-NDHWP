@@ -154,6 +154,6 @@ This project is licensed under the MIT License.
 Created by **Jatin Wadhwani** – feel free to reach out!
 
 * GitHub: [JatinWadhwani123](https://github.com/JatinWadhwani123)
-* Email: [jatinwadhwaniofficial1.com](jatinwadhwaniofficial1.com)
+* Email: [jatinwadhwaniofficial1@gmail.com](jatinwadhwaniofficial1@gmail.com)
 * 💼 LinkedIn: Jatin Wadhwani(www.linkedin.com/in/jatin-wadhwani-)
 ---
