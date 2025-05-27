@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Patient Dashboard - NDHWP</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <noscript>
+        <style>
+            .contact-btn { display: none; }
+            body::before {
+                content: "JavaScript is required to use all features of this website.";
+                display: block;
+                background: #fff3cd;
+                color: #856404;
+                padding: 1rem;
+                text-align: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 9999;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the National Digital Health & Welfare Portal</h1>
+    </header>
+
+    <main>
+        <section class="dashboard-section">
+            <h2>Your Medical Reports</h2>
+            <div class="card">
+                <h3>Recent Reports</h3>
+                <p>Blood Test - Normal<br>Chest X-Ray - Clear<br>ECG - Stable</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Your Medical History</h2>
+            <div class="card">
+                <h3>History Summary</h3>
+                <p>Diabetes - Diagnosed in 2020<br>Hypertension - Monitored since 2018</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Nearby Hospitals</h2>
+            <div class="card-container">
+               <!-- Hospital Card 1 -->
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=500&q=80"
+         alt="Sunrise Care Hospital"
+         class="hospital-image">
+    <h3>Sunrise Care Hospital</h3>
+    <p>24x7 Emergency • Multispecialty • Free Ambulance</p>
+    <button onclick="handleEmail('contact@sunrisecare.com')" class="contact-btn">Email</button>
+</div>
+
+<!-- Hospital Card 2 -->
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=500&q=80"
+         alt="Global Health Clinic"
+         class="hospital-image">
+    <h3>Global Health Clinic</h3>
+    <p>Affordable OPD • Specialized Consultation</p>
+    <a href="https://wa.me/911234567890" target="_blank" class="contact-btn">WhatsApp</a>
+</div>
+
+<!-- Hospital Card 3 -->
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500&q=80"
+         alt="CityMed Hospital"
+         class="hospital-image">
+    <h3>CityMed Hospital</h3>
+    <p>Insurance Accepted • Government Certified</p>
+    <button onclick="handleEmail('help@citymed.org')" class="contact-btn">Email</button>
+</div>
+
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Available Doctors</h2>
+            <div class="card">
+                <h3>Dr. Neha Sharma</h3>
+                <p>Cardiologist • 10 years experience<br>Available: Mon–Fri, 10am–5pm</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Government Schemes</h2>
+            <div class="card">
+                <h3>Ayushman Bharat</h3>
+                <p>Free health insurance up to ₹5 lakh/year<br>For eligible low-income families</p>
+                <a href="https://pmjay.gov.in" target="_blank" class="contact-btn">Know More</a>
+            </div>
+            <div class="logout-container">
+                <button onclick="logout()" class="contact-btn">
+                    <span>🚪</span> Logout
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 National Digital Health & Welfare Portal</p>
+    </footer>
+
+<script>
+    // Email handling function
+    function handleEmail(email) {
+        const gmailUrl = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${email}&su=Inquiry%20from%20NDHWP%20Portal`;
+        window.open(gmailUrl, '_blank');
+    }
+
+    // Logout function
+    function logout() {
+        sessionStorage.removeItem('authenticated');
+        window.location.href = 'index.html';
+    }
+
+    // Improved image error handling
+    function setupImageErrorHandling() {
+        const images = document.querySelectorAll('.hospital-image');
+        images.forEach(img => {
+            img.addEventListener('error', function() {
+                this.src = 'https://via.placeholder.com/400x250?text=Hospital';
+                this.alt = 'Hospital Placeholder Image';
+            });
+        });
+    }
+
+    // Check authentication and setup on load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Check authentication
+        if (!sessionStorage.getItem('authenticated')) {
+            window.location.href = 'index.html';
+            return;
+        }
+
+        // Setup image error handling
+        setupImageErrorHandling();
+    });
+</script>
+
+
+
+    <style>
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .contact-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-btn span {
+            font-size: 16px;
+        }
+
+        .card {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .logout-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logout-container .contact-btn {
+            background-color: #dc3545;
+        }
+
+        .logout-container .contact-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</body>
+</html>
